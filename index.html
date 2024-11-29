@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wavy Background</title>
+  <style>
+    /* Basic reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Background setup */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black; /* Fallback color */
+      color: white;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2; /* Ensures the text stays above the background */
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    /* Wavy background image */
+    #background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://img.freepik.com/free-vector/abstract-waves-background_1048-10452.jpg') repeat-x; /* Replace with your image URL */
+      animation: wave 10s linear infinite;
+      z-index: 1; /* Places it behind the text */
+      opacity: 0.8; /* Optional transparency */
+    }
+
+    /* Wavy animation */
+    @keyframes wave {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+  <h1>the worst website ever</h1>
+</body>
+</html>
